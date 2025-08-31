@@ -1,9 +1,8 @@
 project:
   type: book
-  output-dir: .
+  output-dir: ./docs
 
 book:
-  title: "EL-2007 Knowledge Marketplace"
   author: "Norah Jones"
   date: "8/31/2025"
   chapters:
