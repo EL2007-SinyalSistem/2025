@@ -1,0 +1,26 @@
+project:
+  type: book
+  output-dir: .
+
+book:
+  title: "EL-2007 Knowledge Marketplace"
+  author: "Norah Jones"
+  date: "8/31/2025"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+
+
