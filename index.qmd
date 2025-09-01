@@ -1,5 +1,69 @@
-# Preface {.unnumbered}
+# Pengantar {.unnumbered}
 
-This is a Quarto book.
+**Selamat Datang di Mata Kuliah EL2007 Sinyal dan Sistem!**
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Halo para mahasiswa, selamat datang di halaman awal mata kuliah Sinyal dan Sistem. Halaman ini dirancang untuk menjadi panduan Anda dalam menavigasi seluruh kegiatan pembelajaran selama satu semester ke depan.
+
+[cite_start]Tujuan utama dari mata kuliah ini adalah agar Anda mampu menganalisis sifat-sifat sinyal dan sistem dalam berbagai domain (waktu, frekuensi, dan Laplace) [cite: 4][cite_start], merancang filter dan pengendali sederhana secara matematis [cite: 5][cite_start], serta menggunakan perangkat lunak sebagai alat bantu analisis[cite: 6].
+
+Untuk mencapai tujuan tersebut, kita akan mengikuti alur belajar mingguan yang terstruktur. Mohon baca dan pahami alur kerja serta petunjuk langkah demi langkah di bawah ini.
+
+---
+
+## **Workflow Belajar Mingguan Anda**
+
+Setiap minggunya, Anda akan mengikuti empat tahapan utama (P1-P4) untuk setiap topik yang dibahas. Proses ini dirancang untuk membangun pemahaman dari konsep dasar hingga aplikasi, sambil mendokumentasikannya dalam Jurnal Belajar.
+
+| Tahap | Nama | Aktivitas Utama | Output |
+| :--- | :--- | :--- | :--- |
+| **(P1)** | **Persiapan** | Membaca RPS dan Tujuan Belajar mingguan. | Pemahaman tentang apa yang harus dicapai. |
+| **(P2)** | **Studi Materi** | Mempelajari materi (slide/buku) sambil membuat **Peta Dasar** (ringkasan konsep). | Sebuah Peta Dasar (*mind map*/catatan terstruktur). |
+| **(P3)** | **Latihan Soal** | Mengerjakan soal latihan untuk membangun **Peta Aplikasi** (koneksi konsep ke soal). | Laporan berisi jawaban soal latihan. |
+| **(P4)** | **Ujian Topik** | Menjawab soal ujian singkat dengan memanfaatkan peta yang sudah disusun. | Jawaban ujian topik yang diunggah. |
+
+***Jurnal Belajar***: Di setiap tahap, Anda wajib mencatat proses, kesulitan, dan pemahaman baru Anda dalam sebuah Jurnal Belajar.
+
+---
+
+## **How-To: Petunjuk Langkah Demi Langkah (Contoh: Minggu 1)**
+
+Berikut adalah panduan konkret tentang apa yang harus Anda lakukan setiap minggu, menggunakan materi Minggu 1 sebagai contoh.
+
+## **Langkah 1: Persiapan dan Orientasi (P1)**
+
+1.  **Buka Paket Bahan Kuliah Minggu 1**.
+2.  Baca bagian **(P1) Petunjuk Persiapan dan Tujuan Belajar**.
+3.  [cite_start]**Identifikasi Topik Pekan Ini**: Anda akan tahu bahwa topik minggu ini adalah "Deskripsi Matematis Sinyal Waktu Kontinu"[cite: 9].
+4.  [cite_start]**Pahami Tujuan Anda**: Tujuan utama Anda adalah "Memahami dasar-dasar sinyal waktu kontinu dan representasi matematisnya"[cite: 10].
+5.  [cite_start]**Siapkan Rujukan**: Siapkan buku **Oppenheim Bab 2** dan **Schaum's Outline Bab 1** seperti yang tercantum pada rujukan[cite: 12, 13].
+6.  **Catat di Jurnal Belajar**: Tulis tanggal, topik, dan tujuan belajar Anda untuk minggu ini.
+
+## **Langkah 2: Pelajari Materi dan Buat Peta Dasar (P2)**
+
+1.  **Pelajari Materi Slide**: Buka dan pelajari materi slide di bagian **(P2) Materi dan Peta Dasar**.
+2.  **Buat Peta Dasar**: Sambil membaca, buatlah sebuah *mind map* atau catatan terstruktur. Peta ini harus berisi:
+    * Definisi sinyal.
+    * Klasifikasi sinyal (periodik/aperiodik, genap/ganjil, energi/daya).
+    * Gambar dan rumus sinyal-sinyal dasar (step, impuls, ramp).
+    * Aturan operasi dasar (pergeseran, penskalaan, pembalikan waktu).
+3.  **Catat di Jurnal Belajar**: Tuliskan konsep-konsep kunci yang baru Anda pelajari dan bagian mana yang paling menantang.
+
+## **Langkah 3: Kerjakan Latihan dan Buat Peta Aplikasi (P3)**
+
+1.  **Buka Soal Latihan**: Akses daftar 20 soal latihan di bagian **(P3) Soal Latihan dan Peta Aplikasi**.
+2.  **Kerjakan Soal**: Coba kerjakan setiap soal dalam sebuah laporan.
+3.  **Buat Peta Aplikasi**: Untuk setiap soal, identifikasi:
+    * "Soal ini menguji konsep apa dari Peta Dasar saya?"
+    * "Langkah-langkah apa yang saya perlukan untuk menyelesaikannya?"
+    * Hubungkan jenis soal dengan strategi penyelesaiannya. Inilah "Peta Aplikasi" Anda.
+4.  **Selesaikan Laporan**: Pastikan laporan Anda berisi langkah pengerjaan yang jelas.
+5.  **Catat di Jurnal Belajar**: Soal nomor berapa yang paling sulit? Konsep mana yang perlu Anda pelajari lagi setelah mengerjakan latihan?
+
+## **Langkah 4: Uji Pemahaman dan Unggah Hasil (P4)**
+
+1.  **Kerjakan Soal Ujian Topik**: Buka bagian **(P4) Soal Ujian Topik** dan kerjakan 3 soal yang tersedia.
+2.  **Manfaatkan Peta Anda**: Gunakan Peta Dasar dan Peta Aplikasi yang telah Anda buat sebagai alat bantu untuk menjawab soal dengan lebih cepat dan terstruktur.
+3.  **Unggah Jawaban**: Unggah hasil pekerjaan Anda ke platform yang telah ditentukan (GitHub, LMS, dll.).
+4.  **Catat di Jurnal Belajar**: Lakukan refleksi akhir. Apakah Anda berhasil mencapai tujuan belajar minggu ini? Apa yang akan Anda perbaiki untuk minggu depan?
+
+Selamat belajar, dan jangan ragu untuk berdiskusi jika menemui kesulitan!

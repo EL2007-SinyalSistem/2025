@@ -8,6 +8,8 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - ../EL2007-KMS/silabus/cpl_cpmk.qmd
+    
     - summary.qmd
     - references.qmd
 

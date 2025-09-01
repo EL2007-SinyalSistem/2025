@@ -1,0 +1,591 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdfauthor={Norah Jones},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\author{Norah Jones}
+\date{2025-08-31}
+\begin{document}
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\bookmarksetup{startatroot}
+
+\chapter*{Pengantar}\label{pengantar}
+\addcontentsline{toc}{chapter}{Pengantar}
+
+\markboth{Pengantar}{Pengantar}
+
+\textbf{Selamat Datang di Mata Kuliah EL2007 Sinyal dan Sistem!}
+
+Halo para mahasiswa, selamat datang di halaman awal mata kuliah Sinyal
+dan Sistem. Halaman ini dirancang untuk menjadi panduan Anda dalam
+menavigasi seluruh kegiatan pembelajaran selama satu semester ke depan.
+
+{[}cite\_start{]}Tujuan utama dari mata kuliah ini adalah agar Anda
+mampu menganalisis sifat-sifat sinyal dan sistem dalam berbagai domain
+(waktu, frekuensi, dan Laplace) {[}cite: 4{]}{[}cite\_start{]},
+merancang filter dan pengendali sederhana secara matematis {[}cite:
+5{]}{[}cite\_start{]}, serta menggunakan perangkat lunak sebagai alat
+bantu analisis{[}cite: 6{]}.
+
+Untuk mencapai tujuan tersebut, kita akan mengikuti alur belajar
+mingguan yang terstruktur. Mohon baca dan pahami alur kerja serta
+petunjuk langkah demi langkah di bawah ini.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section*{\texorpdfstring{\textbf{Workflow Belajar Mingguan
+Anda}}{Workflow Belajar Mingguan Anda}}\label{workflow-belajar-mingguan-anda}
+\addcontentsline{toc}{section}{\textbf{Workflow Belajar Mingguan Anda}}
+
+\markright{\textbf{Workflow Belajar Mingguan Anda}}
+
+Setiap minggunya, Anda akan mengikuti empat tahapan utama (P1-P4) untuk
+setiap topik yang dibahas. Proses ini dirancang untuk membangun
+pemahaman dari konsep dasar hingga aplikasi, sambil mendokumentasikannya
+dalam Jurnal Belajar.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Tahap
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Nama
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Aktivitas Utama
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Output
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{(P1)} & \textbf{Persiapan} & Membaca RPS dan Tujuan Belajar
+mingguan. & Pemahaman tentang apa yang harus dicapai. \\
+\textbf{(P2)} & \textbf{Studi Materi} & Mempelajari materi (slide/buku)
+sambil membuat \textbf{Peta Dasar} (ringkasan konsep). & Sebuah Peta
+Dasar (\emph{mind map}/catatan terstruktur). \\
+\textbf{(P3)} & \textbf{Latihan Soal} & Mengerjakan soal latihan untuk
+membangun \textbf{Peta Aplikasi} (koneksi konsep ke soal). & Laporan
+berisi jawaban soal latihan. \\
+\textbf{(P4)} & \textbf{Ujian Topik} & Menjawab soal ujian singkat
+dengan memanfaatkan peta yang sudah disusun. & Jawaban ujian topik yang
+diunggah. \\
+\end{longtable}
+
+\textbf{\emph{Jurnal Belajar}}: Di setiap tahap, Anda wajib mencatat
+proses, kesulitan, dan pemahaman baru Anda dalam sebuah Jurnal Belajar.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section*{\texorpdfstring{\textbf{How-To: Petunjuk Langkah Demi Langkah
+(Contoh: Minggu
+1)}}{How-To: Petunjuk Langkah Demi Langkah (Contoh: Minggu 1)}}\label{how-to-petunjuk-langkah-demi-langkah-contoh-minggu-1}
+\addcontentsline{toc}{section}{\textbf{How-To: Petunjuk Langkah Demi
+Langkah (Contoh: Minggu 1)}}
+
+\markright{\textbf{How-To: Petunjuk Langkah Demi Langkah (Contoh: Minggu
+1)}}
+
+Berikut adalah panduan konkret tentang apa yang harus Anda lakukan
+setiap minggu, menggunakan materi Minggu 1 sebagai contoh.
+
+\section*{\texorpdfstring{\textbf{Langkah 1: Persiapan dan Orientasi
+(P1)}}{Langkah 1: Persiapan dan Orientasi (P1)}}\label{langkah-1-persiapan-dan-orientasi-p1}
+\addcontentsline{toc}{section}{\textbf{Langkah 1: Persiapan dan
+Orientasi (P1)}}
+
+\markright{\textbf{Langkah 1: Persiapan dan Orientasi (P1)}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Buka Paket Bahan Kuliah Minggu 1}.
+\item
+  Baca bagian \textbf{(P1) Petunjuk Persiapan dan Tujuan Belajar}.
+\item
+  {[}cite\_start{]}\textbf{Identifikasi Topik Pekan Ini}: Anda akan tahu
+  bahwa topik minggu ini adalah ``Deskripsi Matematis Sinyal Waktu
+  Kontinu''{[}cite: 9{]}.
+\item
+  {[}cite\_start{]}\textbf{Pahami Tujuan Anda}: Tujuan utama Anda adalah
+  ``Memahami dasar-dasar sinyal waktu kontinu dan representasi
+  matematisnya''{[}cite: 10{]}.
+\item
+  {[}cite\_start{]}\textbf{Siapkan Rujukan}: Siapkan buku
+  \textbf{Oppenheim Bab 2} dan \textbf{Schaum's Outline Bab 1} seperti
+  yang tercantum pada rujukan{[}cite: 12, 13{]}.
+\item
+  \textbf{Catat di Jurnal Belajar}: Tulis tanggal, topik, dan tujuan
+  belajar Anda untuk minggu ini.
+\end{enumerate}
+
+\section*{\texorpdfstring{\textbf{Langkah 2: Pelajari Materi dan Buat
+Peta Dasar
+(P2)}}{Langkah 2: Pelajari Materi dan Buat Peta Dasar (P2)}}\label{langkah-2-pelajari-materi-dan-buat-peta-dasar-p2}
+\addcontentsline{toc}{section}{\textbf{Langkah 2: Pelajari Materi dan
+Buat Peta Dasar (P2)}}
+
+\markright{\textbf{Langkah 2: Pelajari Materi dan Buat Peta Dasar (P2)}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Pelajari Materi Slide}: Buka dan pelajari materi slide di
+  bagian \textbf{(P2) Materi dan Peta Dasar}.
+\item
+  \textbf{Buat Peta Dasar}: Sambil membaca, buatlah sebuah \emph{mind
+  map} atau catatan terstruktur. Peta ini harus berisi:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Definisi sinyal.
+  \item
+    Klasifikasi sinyal (periodik/aperiodik, genap/ganjil, energi/daya).
+  \item
+    Gambar dan rumus sinyal-sinyal dasar (step, impuls, ramp).
+  \item
+    Aturan operasi dasar (pergeseran, penskalaan, pembalikan waktu).
+  \end{itemize}
+\item
+  \textbf{Catat di Jurnal Belajar}: Tuliskan konsep-konsep kunci yang
+  baru Anda pelajari dan bagian mana yang paling menantang.
+\end{enumerate}
+
+\section*{\texorpdfstring{\textbf{Langkah 3: Kerjakan Latihan dan Buat
+Peta Aplikasi
+(P3)}}{Langkah 3: Kerjakan Latihan dan Buat Peta Aplikasi (P3)}}\label{langkah-3-kerjakan-latihan-dan-buat-peta-aplikasi-p3}
+\addcontentsline{toc}{section}{\textbf{Langkah 3: Kerjakan Latihan dan
+Buat Peta Aplikasi (P3)}}
+
+\markright{\textbf{Langkah 3: Kerjakan Latihan dan Buat Peta Aplikasi
+(P3)}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Buka Soal Latihan}: Akses daftar 20 soal latihan di bagian
+  \textbf{(P3) Soal Latihan dan Peta Aplikasi}.
+\item
+  \textbf{Kerjakan Soal}: Coba kerjakan setiap soal dalam sebuah
+  laporan.
+\item
+  \textbf{Buat Peta Aplikasi}: Untuk setiap soal, identifikasi:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ``Soal ini menguji konsep apa dari Peta Dasar saya?''
+  \item
+    ``Langkah-langkah apa yang saya perlukan untuk menyelesaikannya?''
+  \item
+    Hubungkan jenis soal dengan strategi penyelesaiannya. Inilah ``Peta
+    Aplikasi'' Anda.
+  \end{itemize}
+\item
+  \textbf{Selesaikan Laporan}: Pastikan laporan Anda berisi langkah
+  pengerjaan yang jelas.
+\item
+  \textbf{Catat di Jurnal Belajar}: Soal nomor berapa yang paling sulit?
+  Konsep mana yang perlu Anda pelajari lagi setelah mengerjakan latihan?
+\end{enumerate}
+
+\section*{\texorpdfstring{\textbf{Langkah 4: Uji Pemahaman dan Unggah
+Hasil
+(P4)}}{Langkah 4: Uji Pemahaman dan Unggah Hasil (P4)}}\label{langkah-4-uji-pemahaman-dan-unggah-hasil-p4}
+\addcontentsline{toc}{section}{\textbf{Langkah 4: Uji Pemahaman dan
+Unggah Hasil (P4)}}
+
+\markright{\textbf{Langkah 4: Uji Pemahaman dan Unggah Hasil (P4)}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Kerjakan Soal Ujian Topik}: Buka bagian \textbf{(P4) Soal
+  Ujian Topik} dan kerjakan 3 soal yang tersedia.
+\item
+  \textbf{Manfaatkan Peta Anda}: Gunakan Peta Dasar dan Peta Aplikasi
+  yang telah Anda buat sebagai alat bantu untuk menjawab soal dengan
+  lebih cepat dan terstruktur.
+\item
+  \textbf{Unggah Jawaban}: Unggah hasil pekerjaan Anda ke platform yang
+  telah ditentukan (GitHub, LMS, dll.).
+\item
+  \textbf{Catat di Jurnal Belajar}: Lakukan refleksi akhir. Apakah Anda
+  berhasil mencapai tujuan belajar minggu ini? Apa yang akan Anda
+  perbaiki untuk minggu depan?
+\end{enumerate}
+
+Selamat belajar, dan jangan ragu untuk berdiskusi jika menemui
+kesulitan!
+
+\bookmarksetup{startatroot}
+
+\chapter{Introduction}\label{introduction}
+
+{{<include  ../EL2007-KMS/silabus/cpl_cpmk.qmd    >}}.
+
+\bookmarksetup{startatroot}
+
+\chapter{Capaian Belajar}\label{capaian-belajar}
+
+Berikut adalah rancangan pembelajaran satu semester untuk mata kuliah
+\textbf{Sinyal dan Sistem (EL2007)}, yang telah ditambahkan dengan
+rujukan pada buku teks \emph{Signals and Systems} oleh Oppenheim dan
+\emph{Schaum's Outline of Signals and Systems} oleh Hwei Hsu.
+
+\textbf{Rencana Pembelajaran Satu Semester}
+
+\textbf{Kode Mata Kuliah:} EL2007 \textbf{Nama Mata Kuliah:} Sinyal dan
+Sistem / Signals and Systems \textbf{Jumlah SKS:} 3 SKS
+\textbf{Penyelenggara:} 132 - Teknik Elektro / STEI
+\textbf{Co-requisite:} MA2074 Matematika Rekayasa IIA / Engineering
+Mathematics IIA \textbf{Bahasa Pengantar:} Bahasa Indonesia / English
+
+\textbf{Capaian Pembelajaran Mata Kuliah (CPMK):} Setelah mengikuti mata
+kuliah ini, mahasiswa diharapkan mampu: 1. \textbf{Menganalisis sifat
+sinyal dan sistem} dalam domain waktu, domain frekuensi, dan domain
+Laplace. 2. \textbf{Merancang filter dan pengendali secara matematis}
+pada studi kasus. 3. \textbf{Menggunakan alat bantu (perangkat lunak)}
+untuk menganalisis sinyal dan sistem.
+
+\textbf{Metode Pembelajaran:} Ceramah, Diskusi, Studi Kasus, Belajar
+\textbf{Modalitas Pembelajaran:} Luring, Daring, Bauran (Offline,
+Online, Hybrid) \textbf{Metode Penilaian:} PR (Pekerjaan Rumah), Kuis,
+Ujian \textbf{Jenis Nilai:} ABCDE
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{Distribusi Materi dan Kegiatan Per Minggu (14 Minggu
+Perkuliahan):}
+
+\textbf{Minggu 1:} * \textbf{Bahan Kajian:} Deskripsi Matematis Sinyal
+Waktu Kontinu (Mathematical Description of Continuous-time Signals). *
+\textbf{CPMK Terkait:} Memahami dasar-dasar sinyal waktu kontinu dan
+representasi matematisnya. * \textbf{Kegiatan:} Ceramah dan Diskusi
+tentang jenis-jenis sinyal dan operasi dasar sinyal. * \textbf{Rujukan:}
+* \textbf{Oppenheim:} Bab 2 (Signals, Transformations of the Independent
+Variable, Basic Continuous-Time Signals). * \textbf{Schaum's Series:}
+Bab 1 (Signals and Systems, Signals and Classification of Signals, Basic
+Continuous-Time Signals). Lihat juga Solved Problems seperti 1.3, 1.4,
+1.5, 1.19, 1.46, 1.47, 1.48 untuk latihan.
+
+\textbf{Minggu 2-3:} * \textbf{Bahan Kajian:} Deskripsi Sistem di Domain
+Waktu: Persamaan Diferensial dan Respon Impuls (Time-Domain Description
+of Systems: Differential Equation and Impulse Response). * \textbf{CPMK
+Terkait:} Mengenal karakteristik sistem linear tak-berubah waktu (LTI)
+dan representasinya melalui persamaan diferensial dan respon impuls. *
+\textbf{Kegiatan:} Ceramah dan Diskusi mengenai konsep sistem,
+sifat-sifatnya, dan pentingnya respon impuls. * \textbf{Penilaian (Akhir
+Minggu 3):} PR 1 (terkait deskripsi sinyal dan sistem di domain waktu).
+* \textbf{Rujukan:} * \textbf{Oppenheim:} Bab 2 (Systems, Properties of
+Systems), Bab 3 (Linear Time-Invariant Systems, The Representation of
+Signals in Terms of Impulses, Systems Described by Differential and
+Difference Equations). * \textbf{Schaum's Series:} Bab 1 (Systems and
+Classification of Systems), Bab 2 (Introduction, Systems Described by
+Differential Equations, Eigenfunctions of Continuous-Time LTI Systems).
+Solved Problems seperti 1.44, 1.45, 1.51, 1.52 relevan untuk fungsi
+eigen dan deskripsi sistem.
+
+\textbf{Minggu 4-5:} * \textbf{Bahan Kajian:} Analisis Sistem di Domain
+Waktu: Solusi Persamaan Diferensial dan Konvolusi (Time-Domain Analysis
+of Systems: Solution to Differential Equation and Convolution). *
+\textbf{CPMK Terkait:} Mampu menganalisis respon sistem LTI menggunakan
+konvolusi dan menyelesaikan persamaan diferensial yang menggambarkan
+sistem. * \textbf{Kegiatan:} Ceramah, Diskusi, dan Studi Kasus tentang
+aplikasi operasi konvolusi untuk mendapatkan respon sistem. *
+\textbf{Rujukan:} * \textbf{Oppenheim:} Bab 3 (Discrete-Time LTI
+Systems: The Convolution Sum, Continuous-Time LTI Systems: The
+Convolution Integral, Systems Described by Differential and Difference
+Equations). * \textbf{Schaum's Series:} Bab 2 (Response of a
+Continuous-Time LTI System and the Convolution Integral, Systems
+Described by Differential Equations). Lihat Solved Problems seperti 2.1,
+2.8, 2.14, 2.46, 2.64 untuk latihan.
+
+\textbf{Minggu 6-7:} * \textbf{Bahan Kajian:} Deskripsi Domain
+Frekuensi: Transformasi Fourier (Frequency-Domain Description: Fourier
+Transform). * \textbf{CPMK Terkait:} Memahami konsep Transformasi
+Fourier sebagai alat untuk menganalisis sinyal dan sistem di domain
+frekuensi. * \textbf{Kegiatan:} Ceramah, Diskusi, dan Belajar Mandiri
+(latihan soal) tentang Transformasi Fourier untuk berbagai jenis sinyal.
+* \textbf{Penilaian (Akhir Minggu 7):} Kuis 1 (tentang Transformasi
+Fourier). * \textbf{Rujukan:} * \textbf{Oppenheim:} Bab 4
+(Representation of Aperiodic Signals: The Continuous-Time Fourier
+Transform, Properties of the Continuous-Time Fourier Transform). *
+\textbf{Schaum's Series:} Bab 5 (Introduction, The Fourier Transform,
+Properties of the Continuous-Time Fourier Transform). Lihat Solved
+Problems seperti 5.31, 5.32, 5.35 untuk latihan.
+
+\textbf{Minggu 8:} * \textbf{Bahan Kajian:} Analisis Sistem di Domain
+Frekuensi: Respon Frekuensi (Frequency-Domain Analysis of Systems:
+Frequency Response). * \textbf{CPMK Terkait:} Mampu menganalisis respon
+frekuensi sistem dan memahami dampaknya terhadap sinyal input. *
+\textbf{Kegiatan:} Ceramah, Diskusi, dan Studi Kasus mengenai
+karakteristik filter di domain frekuensi. * \textbf{Rujukan:} *
+\textbf{Oppenheim:} Bab 4 (The Frequency Response of Systems
+Characterized by Linear Constant-Coefficient Differential Equations,
+First-Order and Second-Order Systems). * \textbf{Schaum's Series:} Bab 5
+(The Frequency Response of Continuous-Time LTI Systems). Lihat Solved
+Problems seperti 5.45, 5.46, 5.47 untuk latihan.
+
+\textbf{Minggu 9-10:} * \textbf{Bahan Kajian:} Deskripsi Domain Laplace:
+Transformasi Laplace (Laplace-Domain Description: Laplace Transform). *
+\textbf{CPMK Terkait:} Memahami Transformasi Laplace dan inversnya
+sebagai alat yang ampuh untuk analisis sistem. * \textbf{Kegiatan:}
+Ceramah, Diskusi, dan Belajar Mandiri (latihan soal) tentang
+Transformasi Laplace untuk menyelesaikan persamaan diferensial. *
+\textbf{Penilaian (Akhir Minggu 10):} PR 2 (terkait Transformasi
+Laplace). * \textbf{Rujukan:} * \textbf{Oppenheim:} Bab 9 (Laplace and
+z-Transforms: Introduction, Relationship to Fourier Transform, Poles and
+Zeros, Region of Convergence of a Laplace or z-transform and its
+relationship to properties of the signal with which it is associated;
+inverse transforms using partial fraction expansion; basic transform
+properties). * \textbf{Schaum's Series:} Bab 3 (The Laplace Transform,
+Laplace Transforms of Some Common Signals, Properties of the Laplace
+Transform, The Inverse Laplace Transform, The Unilateral Laplace
+Transform). Lihat Solved Problems seperti 3.10, 3.15, 3.32, 3.33, 3.34,
+3.37, 3.38 untuk latihan.
+
+\textbf{Minggu 11-12:} * \textbf{Bahan Kajian:} Analisis Sistem di
+Domain Laplace: Fungsi Alih (Laplace-Domain Analysis of System: Transfer
+Function). * \textbf{CPMK Terkait:} Mampu menganalisis sistem
+menggunakan konsep fungsi alih dan diagram blok di domain Laplace. *
+\textbf{Kegiatan:} Ceramah, Diskusi, dan Studi Kasus analisis sistem
+kompleks menggunakan fungsi alih. * \textbf{Penilaian (Akhir Minggu
+12):} Kuis 2 (tentang Fungsi Alih). * \textbf{Rujukan:} *
+\textbf{Oppenheim:} Bab 9 (System Functions for LTI Systems,
+Interconnections of LTI Systems). * \textbf{Schaum's Series:} Bab 3 (The
+System Function, Transform Circuits). Lihat juga ilustrasi sistem
+kaskade dan paralel.
+
+\textbf{Minggu 13:} * \textbf{Bahan Kajian:} Studi kasus: Desain Filter
+(Case Study: Filter Designs). * \textbf{CPMK Terkait:} Mampu merancang
+filter secara matematis dan menggunakan perangkat lunak untuk
+memverifikasi desain. * \textbf{Kegiatan:} Studi Kasus dan Belajar
+mandiri/praktikum menggunakan perangkat lunak untuk simulasi desain
+filter (misalnya, low-pass, high-pass). * \textbf{Penilaian:} PR 3
+(proyek desain filter). * \textbf{Rujukan:} * \textbf{Oppenheim:} Bab 6
+(Introduction to Filtering in Continuous-Time and Discrete-Time, Ideal
+Frequency-Selective Filters, Examples of Filters described by
+differential and difference equations, Butterworth filters). *
+\textbf{Schaum's Series:} Bab 5 (Filtering, Bandwidth), Bab 6 (System
+Response to Sampled Continuous-Time Sinusoids, Simulation), lihat pula
+bilinear transformation (Prob. 6.46, 6.47).
+
+\textbf{Minggu 14:} * \textbf{Bahan Kajian:} Studi kasus: Pengantar
+Sistem Kendali Linier Umpan Balik (Case Study: Introduction to Linear
+Feedback Control System). * \textbf{CPMK Terkait:} Memahami prinsip
+dasar sistem kendali umpan balik dan mampu menganalisis karakteristik
+performanya. * \textbf{Kegiatan:} Ceramah, Diskusi, dan Studi Kasus
+pengantar konsep sistem kendali. * \textbf{Rujukan:} *
+\textbf{Oppenheim:} Bab 11 (Linear Feedback Systems: Introduction,
+Linear Feedback Systems, Some Applications and Consequences of Feedback,
+Root-Locus Analysis, The Nyquist Stability Criterion, Gain and Phase
+Margins). * \textbf{Schaum's Series:} Bab 7 (State Space Analysis:
+Introduction, The Concept of State, State Space Representation of
+Discrete-Time LTI Systems, State Space Representation of Continuous-Time
+LTI Systems, Solutions of State Equations for Discrete-Time LTI Systems,
+Solutions of State Equations for Continuous-Time LTI Systems). (Meskipun
+Bab 7 Schaum's lebih fokus pada analisis ruang keadaan, ini adalah dasar
+untuk sistem kendali).
+
+\textbf{Minggu Ujian Akhir Semester:} * \textbf{Penilaian:} Ujian Akhir
+Semester (mencakup seluruh bahan kajian dari minggu 1 hingga 14).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\bookmarksetup{startatroot}
+
+\chapter{Summary}\label{summary}
+
+In summary, this book has no content whatsoever.
+
+\bookmarksetup{startatroot}
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\phantomsection\label{refs}
+
+
+
+
+\end{document}
