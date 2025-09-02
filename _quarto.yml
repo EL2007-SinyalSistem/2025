@@ -3,7 +3,7 @@ project:
   output-dir: ./docs
 
 book:
-  author: "Norah Jones"
+  author: "Armein Z. R. Langi"
   date: "8/31/2025"
   chapters:
     - index.qmd
